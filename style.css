@@ -1,0 +1,318 @@
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcf3ef;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #26418c;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LANDING PAGE
+   ═══════════════════════════════════════════════════════════ */
+
+.landing-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fcf3ef;
+}
+
+/* ── LANDING HEADER ──────────────────────────────────────── */
+.landing-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  padding: clamp(14px, 2.5vw, 24px) clamp(20px, 5vw, 48px);
+}
+
+.landing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.landing-tagline {
+  font-size: clamp(10px, 1.3vw, 13px);
+  color: #287632;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  font-style: italic;
+}
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #287632;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.hamburger:hover span {
+  background-color: #26418c;
+}
+
+/* ── NAV OVERLAY ─────────────────────────────────────────── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #fcf3ef;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-close {
+  position: absolute;
+  top: clamp(16px, 3vw, 28px);
+  right: clamp(20px, 5vw, 48px);
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #287632;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.overlay-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 4vw, 36px);
+}
+
+.overlay-link {
+  font-size: clamp(22px, 5vw, 42px);
+  font-weight: 600;
+  color: #26418c;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.overlay-link:hover {
+  color: #287632;
+}
+
+/* ── LANDING MAIN ────────────────────────────────────────── */
+.landing-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(80px, 12vw, 120px) clamp(20px, 5vw, 40px);
+}
+
+.logo-wrap {
+  animation: fadeUp 0.8s ease both;
+}
+
+.landing-logo {
+  width: clamp(220px, 50vw, 420px);
+  height: auto;
+  display: block;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── LANDING FOOTER ──────────────────────────────────────── */
+.landing-footer {
+  text-align: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 40px);
+  font-size: clamp(10px, 1.3vw, 13px);
+  color: #287632;
+  letter-spacing: 0.5px;
+  font-style: italic;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   NANSENSGADE PAGE (previously index)
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── HERO WRAP — establishes stacking context for header ── */
+.hero-wrap {
+  position: relative;
+}
+
+/* ── HEADER — floated over the hero ─────────────────────── */
+.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: clamp(16px, 3vw, 28px);
+  padding-bottom: clamp(16px, 3vw, 28px);
+}
+
+.header-inner {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5vw, 40px);
+  padding-right: clamp(20px, 5vw, 40px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.back-link {
+  font-size: clamp(11px, 1.5vw, 13px);
+  font-weight: 600;
+  color: #287632;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.7;
+}
+
+.header-lines {
+  display: inline-block;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.header-line-1,
+.header-line-2 {
+  font-weight: 600;
+  color: #287632;
+  font-size: clamp(11px, 1.5vw, 14px);
+  letter-spacing: 0.5px;
+}
+
+/* ── HERO ILLUSTRATION — FULL BLEED, FLUSH TO TOP ───────── */
+.hero-illustration {
+  width: 100%;
+  margin: 0 0 clamp(20px, 4vw, 40px) 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.hero-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── COLUMN CONSTRAINT (content below hero) ──────────────── */
+.content-wrapper {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(20px, 5vw, 40px);
+  padding-right: clamp(20px, 5vw, 40px);
+  padding-top: 0;
+  padding-bottom: clamp(40px, 8vw, 80px);
+}
+
+/* ── FLOWER ILLUSTRATION ─────────────────────────────────── */
+.flower-illustration {
+  width: 100%;
+  text-align: center;
+  margin: clamp(30px, 5vw, 40px) 0;
+  padding: 0;
+}
+
+.flower-illustration img {
+  max-width: clamp(120px, 30vw, 200px);
+  height: auto;
+}
+
+/* ── TYPOGRAPHY ──────────────────────────────────────────── */
+.main-title {
+  font-size: clamp(28px, 6vw, 48px);
+  font-weight: 700;
+  color: #26418c;
+  margin-top: 0;
+  margin-bottom: clamp(16px, 3vw, 30px);
+}
+
+.section-title {
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 600;
+  color: #26418c;
+  margin-top: clamp(24px, 5vw, 40px);
+  margin-bottom: clamp(12px, 2.5vw, 20px);
+}
+
+p {
+  font-size: clamp(14px, 1.8vw, 16px);
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.footer {
+  margin-top: clamp(40px, 8vw, 60px);
+  text-align: center;
+  font-size: clamp(11px, 1.5vw, 14px);
+  color: #26418c;
+  letter-spacing: 0.5px;
+}
+
+/* ── RESPONSIVE BREAKPOINTS ──────────────────────────────── */
+
+@media (max-width: 400px) {
+  .header-line-1,
+  .header-line-2 {
+    font-size: 10px;
+  }
+
+  .landing-tagline {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-illustration {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
