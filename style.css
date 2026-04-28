@@ -316,3 +316,200 @@ p {
     margin-right: 0;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PARTICIPATE PAGE
+   ═══════════════════════════════════════════════════════════ */
+
+.participate-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fcf3ef;
+}
+
+/* ── PARTICIPATE HEADER ──────────────────────────────────── */
+.participate-header {
+  width: 100%;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 48px);
+  border-bottom: 1px solid rgba(40, 118, 50, 0.15);
+}
+
+.participate-header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.guide-label-img {
+  height: clamp(36px, 6vw, 54px);
+  width: auto;
+  display: block;
+}
+
+.participate-logo-link {
+  display: block;
+  flex-shrink: 0;
+}
+
+.participate-logo {
+  height: clamp(40px, 7vw, 64px);
+  width: auto;
+  display: block;
+}
+
+.participate-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.summer-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+}
+
+.summer-line1,
+.summer-line2 {
+  font-size: clamp(11px, 1.4vw, 14px);
+  font-weight: 600;
+  color: #287632;
+  letter-spacing: 0.5px;
+}
+
+/* ── GUIDE SPREAD (illustration) ─────────────────────────── */
+.guide-spread {
+  width: 100%;
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 5vw, 48px);
+}
+
+.guide-spread-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.guide-spread-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ── THREE-COLUMN CONTENT ────────────────────────────────── */
+.participate-content {
+  padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 48px) clamp(40px, 8vw, 80px);
+}
+
+.participate-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.part-col-title {
+  font-size: clamp(15px, 2vw, 19px);
+  font-weight: 700;
+  color: #287632;
+  margin: 0 0 clamp(12px, 2vw, 20px) 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow-img {
+  height: 28px;
+  width: auto;
+}
+
+.part-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.part-list li {
+  font-size: clamp(13px, 1.6vw, 15px);
+  color: #26418c;
+  line-height: 1.55;
+  padding-left: 16px;
+  position: relative;
+}
+
+.part-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: #287632;
+  font-weight: 700;
+}
+
+/* Costs column */
+.part-col--costs {
+  min-width: 160px;
+  text-align: center;
+}
+
+.cost-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: clamp(14px, 2.5vw, 22px);
+}
+
+.cost-label {
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 600;
+  color: #26418c;
+}
+
+.cost-date {
+  font-size: clamp(11px, 1.4vw, 13px);
+  color: #287632;
+  font-style: italic;
+}
+
+/* ── PARTICIPATE FOOTER ──────────────────────────────────── */
+.participate-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: clamp(16px, 3vw, 28px) clamp(20px, 5vw, 40px);
+  font-size: clamp(10px, 1.3vw, 13px);
+  color: #287632;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  border-top: 1px solid rgba(40, 118, 50, 0.15);
+}
+
+/* Active nav link */
+.overlay-link--active {
+  color: #287632 !important;
+}
+
+/* ── PARTICIPATE RESPONSIVE ──────────────────────────────── */
+@media (max-width: 640px) {
+  .participate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .part-col--costs {
+    text-align: left;
+    min-width: unset;
+  }
+
+  .guide-label-img {
+    display: none;
+  }
+}

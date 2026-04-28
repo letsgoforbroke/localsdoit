@@ -10,6 +10,16 @@
 
 <body>
 
+  <!-- NAV OVERLAY -->
+  <div class="nav-overlay" id="navOverlay">
+    <button class="nav-close" id="navClose" aria-label="Close menu">✕</button>
+    <nav class="overlay-nav">
+      <a href="nansensgade.html" class="overlay-link overlay-link--active">Discover Nansensgade</a>
+      <a href="participate.html" class="overlay-link">Participate</a>
+      <a href="mailto:kontakt@localsdoit.dk" class="overlay-link">Kontakt</a>
+    </nav>
+  </div>
+
   <!-- HERO WRAP: header floats over the full-bleed illustration -->
   <div class="hero-wrap">
 
@@ -21,6 +31,9 @@
           <div class="header-line-1">LOCALS DO IT / NANSENSGADE</div>
           <div class="header-line-2">1. JULY / 31. AUGUST</div>
         </div>
+        <button class="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
 
@@ -92,6 +105,14 @@
     </footer>
 
   </div><!-- /.content-wrapper -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.getElementById('navOverlay');
+    const closeBtn = document.getElementById('navClose');
+    hamburger.addEventListener('click', () => overlay.classList.add('open'));
+    closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+  </script>
 
 </body>
 </html>
