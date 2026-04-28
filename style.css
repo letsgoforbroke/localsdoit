@@ -411,7 +411,7 @@ p {
   max-width: 900px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: clamp(24px, 4vw, 48px);
   align-items: start;
 }
@@ -458,8 +458,7 @@ p {
 
 /* Costs column */
 .part-col--costs {
-  min-width: 160px;
-  text-align: center;
+  text-align: left;
 }
 
 .cost-item {
