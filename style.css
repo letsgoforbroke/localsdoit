@@ -265,6 +265,21 @@ html, body {
   height: auto;
 }
 
+/* ── REWARDS ILLUSTRATION (full-width closing image) ─────── */
+.rewards-illustration {
+  width: 100%;
+  margin: clamp(30px, 5vw, 40px) 0 0 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.rewards-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
 /* ── TYPOGRAPHY ──────────────────────────────────────────── */
 .main-title {
   font-size: clamp(28px, 6vw, 48px);
