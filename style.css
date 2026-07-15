@@ -280,6 +280,26 @@ html, body {
   border-radius: 4px;
 }
 
+/* ── GALLERY ILLUSTRATION (full-bleed closing image) ─────── */
+.gallery-illustration {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: clamp(30px, 5vw, 40px);
+  margin-bottom: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.gallery-illustration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* ── TYPOGRAPHY ──────────────────────────────────────────── */
 .main-title {
   font-size: clamp(28px, 6vw, 48px);
